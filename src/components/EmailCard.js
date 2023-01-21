@@ -89,8 +89,16 @@ function EmailCard({
               </p>
               {isFav && (
                 <button
-                  style={{ backgroundColor: "#E54065", color: "#fff" }}
+                  style={{
+                    borderRadius: "1em",
+                    border: "none",
+                    padding: "0.5em",
+                    cursor: "pointer",
+                    backgroundColor: "#E54065",
+                    color: "#fff",
+                  }}
                   disabled
+                  // className="fav-btn"
                 >
                   Favourite
                 </button>
