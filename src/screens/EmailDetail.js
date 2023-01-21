@@ -77,6 +77,7 @@ function EmailDetail({
               setFavs((a) => [...a, currentEmailData?.id]);
             }
           }}
+          className="fav-btn"
         >
           {!isFav ? "Mark as favourite" : " Remove from favourites"}
         </button>

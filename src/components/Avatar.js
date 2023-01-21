@@ -3,8 +3,8 @@ import React from "react";
 function Avatar({ name }) {
   return (
     <div
+      className="accent-bg"
       style={{
-        backgroundColor: "hotpink",
         // padding: "1.5em",
         borderRadius: "20000px",
         height: "3em",

@@ -36,3 +36,44 @@
     transform: rotate(360deg);
   }
 }
+
+.accent-bg{
+  background-color: #E54065;
+}
+
+.accent{
+  color: #E54065;
+}
+
+.body-bg{
+  background-color: #F4F5F9;
+}
+
+.border{
+  color:#CFD2DC;
+}
+
+.text{
+  color: #636363;
+}
+
+.filter-btn{
+  background-color: #E1E4EA;
+  border-radius: 1em;
+  border:none;
+  padding: 0.5em;
+  cursor: pointer;
+}
+
+.read-bg{
+  background-color: #F2F2F2;
+}
+
+.fav-btn{
+  border-radius: 1em;
+  border:none;
+  padding: 0.5em;
+  cursor: pointer;
+  background-color: #E54065;
+
+}

@@ -29,8 +29,9 @@ function EmailCard({
           borderColor:
             cardData?.id == currentEmailData?.id ? "#E54065" : "gray",
           borderRadius: "0.5em",
-          backgroundColor: isRead ? "lightgray" : "",
+          // backgroundColor: isRead ? "#F2F2F2" : "",
         }}
+        className={isRead ? "read-bg" : ""}
         onClick={() => {
           setShowEmail(true);
           setCurrentEmailData(cardData);

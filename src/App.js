@@ -17,27 +17,29 @@ function App() {
   const [read, setRead] = useState([]);
 
   return (
-    <>
+    <div className="body-bg" style={{ height: "100vh" }}>
       <div
+        className="body-bg"
         style={{
           position: "fixed",
           width: "100%",
           height: "4em",
-          backgroundColor: "white",
           top: "0",
           display: "flex",
           alignItems: "center",
           justifyContent: "start",
         }}
       >
-        <div style={{ marginLeft: "1em" }}>
+        <div style={{ marginLeft: "1em" }} className="body-bg">
           Filter by:
           {filters?.map((item, index) => {
             return (
               <button
+                className="filter-btn"
                 style={{
                   marginLeft: "0.5em",
-                  backgroundColor: appliedFilter?.id == item?.id ? "gray" : "",
+                  backgroundColor:
+                    appliedFilter?.id == item?.id ? "#636363" : "",
                   color: appliedFilter?.id == item?.id ? "white" : "",
                 }}
                 key={item?.id}
@@ -50,6 +52,7 @@ function App() {
             );
           })}
           <button
+            className="filter-btn"
             style={{
               marginLeft: "0.5em",
             }}
@@ -61,7 +64,10 @@ function App() {
           </button>
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "row", marginTop: "3em" }}>
+      <div
+        className="body-bg"
+        style={{ display: "flex", flexDirection: "row", marginTop: "3em" }}
+      >
         <div>
           <EmailList
             setCurrentEmailData={setCurrentEmailData}
@@ -97,7 +103,7 @@ function App() {
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 }
 
