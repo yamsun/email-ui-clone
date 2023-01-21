@@ -1,4 +1,5 @@
 import React from "react";
+import Avatar from "./Avatar";
 
 function EmailCard({
   cardData,
@@ -13,6 +14,9 @@ function EmailCard({
   let emailDate = new Date(cardData?.date);
   let isFav = favs.includes(cardData?.id);
   let isRead = read.includes(cardData?.id);
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
   return (
     <div>
       <div
@@ -33,38 +37,65 @@ function EmailCard({
           setRead([...read, cardData?.id]);
         }}
       >
-        <p>
-          From: {cardData?.from?.name} {cardData?.from?.email}
-        </p>
-        <p>Subject: {cardData?.subject}</p>
-        <p>{cardData?.short_description}</p>
         <div
           style={{
             display: "flex",
             flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "space-between",
-            width: "100%",
+            alignItems: "start",
+            justifyContent: "start",
           }}
         >
-          <p style={{ margin: 0 }}>
-            {emailDate.toLocaleTimeString([], {
-              year: "numeric",
-              month: "numeric",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: true,
-            })}
-          </p>
-          {isFav && (
-            <button
-              style={{ backgroundColor: "#E54065", color: "#fff" }}
-              disabled
+          <div
+            style={{
+              // marginRight: "1em",
+              margin: "0.5em",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              // flex: 1,
+            }}
+          >
+            <Avatar name={cardData?.from?.name} />
+          </div>
+          <div style={{ marginLeft: "1em" }}>
+            <p>
+              From: <b>{capitalizeFirstLetter(cardData?.from?.name)}</b>{" "}
+              {cardData?.from?.email}
+            </p>
+            <p>
+              Subject: <b>{cardData?.subject}</b>
+            </p>
+            <p>{cardData?.short_description + " ..."}</p>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                width: "100%",
+              }}
             >
-              Favourite
-            </button>
-          )}
+              <p style={{ margin: 0 }}>
+                {emailDate.toLocaleTimeString([], {
+                  year: "numeric",
+                  month: "numeric",
+                  day: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: true,
+                })}
+              </p>
+              {isFav && (
+                <button
+                  style={{ backgroundColor: "#E54065", color: "#fff" }}
+                  disabled
+                >
+                  Favourite
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

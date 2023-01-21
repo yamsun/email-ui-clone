@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Avatar from "../components/Avatar";
 import EmailCard from "../components/EmailCard";
 
 function EmailDetail({
@@ -37,18 +38,28 @@ function EmailDetail({
           margin: 0,
         }}
       >
-        <div style={{ margin: "1em" }}>
-          <h3>{currentEmailData?.subject}</h3>
-          <p>
-            {new Date(currentEmailData?.date).toLocaleTimeString([], {
-              year: "numeric",
-              month: "numeric",
-              day: "numeric",
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: true,
-            })}
-          </p>
+        <div
+          style={{
+            margin: "1em",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Avatar name={currentEmailData?.from?.name} />
+          <div style={{ marginLeft: "1em" }}>
+            <h3>{currentEmailData?.subject}</h3>
+            <p>
+              {new Date(currentEmailData?.date).toLocaleTimeString([], {
+                year: "numeric",
+                month: "numeric",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true,
+              })}
+            </p>
+          </div>
         </div>
         <button
           style={{

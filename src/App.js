@@ -18,7 +18,6 @@ function App() {
 
   return (
     <>
-      <div className="App">Welcome to $Mail</div>
       <div
         style={{
           position: "fixed",
@@ -62,7 +61,7 @@ function App() {
           </button>
         </div>
       </div>
-      <div style={{ display: "flex", flexDirection: "row", marginTop: "2em" }}>
+      <div style={{ display: "flex", flexDirection: "row", marginTop: "3em" }}>
         <div>
           <EmailList
             setCurrentEmailData={setCurrentEmailData}
